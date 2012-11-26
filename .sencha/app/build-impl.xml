@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <!--
+    Init-Local
+    -->
+    <target name="-before-init-local"/>
+    <target name="-init-local">
+        <property file="${basedir}/../../local.properties"/>
+
+        <script language="javascript">
+            var f = new java.io.File(project.getProperty("basedir"));
+            var sub = ".sencha/workspace/sencha.cfg";
+
+            for (var p = f; p; p = p.getParentFile()) {
+                var t = new java.io.File(p, sub);
+                if (t.exists()) {
+                    // we found the workspace folder!
+
+                    t = new java.io.File(p, "local.properties");
+                    if (t.exists()) {
+                        var loader = project.createTask("property");
+                        loader.setFile(new java.io.File(t.getCanonicalPath()));
+                        loader.execute();
+                    }
+
+                    break;
+                }
+            }
+        </script>
+    </target>
+    <target name="-after-init-local"/>
+    <target name="init-local"
+            depends="-before-init-local,-init-local,-after-init-local"/>
+
+    <!--
+    Find Sencha Cmd
+    -->
+    <target name="find-cmd" unless="cmd.dir">
+        <!--
+        Run "sencha which" to find the Sencha Cmd basedir and get "cmd.dir" setup. We
+        need to execute the command with curdir set properly for Cmd to pick up that we
+        are running for an application.
+        -->
+        <exec executable="sencha" dir="${basedir}">
+            <arg value="which"/><arg value="-o=$cmddir$"/>
+        </exec>
+
+        <!-- Now read the generated properties file and delete it -->
+        <property file="$cmddir$"/>
+        <delete file="$cmddir$"/>
+
+        <echo>Using Sencha Cmd from ${cmd.dir}</echo>
+    </target>
+
+    <!--
+    Init
+    -->
+    <target name="-before-init"/>
+    <target name="-init">
+        <taskdef resource="com/sencha/ant/antlib.xml" classpath="${cmd.dir}/sencha.jar"/>
+        <x-sencha-init prefix=""/>
+
+        <!-- initialize the build.dir property from the workspace config after we've loaded it -->
+        <property name="build.dir" location="${workspace.build.dir}"/>
+
+        <!-- Some operations require sencha.jar in the Ant classpath -->
+        <x-extend-classpath>
+            <jar path="${cmd.dir}/sencha.jar"/>
+        </x-extend-classpath>
+    </target>
+    <target name="-after-init"/>
+    <target name="init"
+            depends="init-local,find-cmd,-before-init,-init,-after-init"/>
+
+    <!--
+    Clean
+    -->
+    <target name="-before-clean"/>
+    <target name="-clean">
+        <delete dir="${build.dr}"/>
+    </target>
+    <target name="-after-clean"/>
+    <target name="clean"
+            depends="init,-before-clean,-clean,-after-clean"
+            description="Removes all build output produced by the 'build' target"/>
+
+    <!--
+    Build SASS
+    -->
+    <target name="-before-sass"/>
+    <target name="-sass">
+        <!-- run sass compilation over the various themes -->
+        <for param="sass">
+            <dirset dir="${app.dir}/resources/sass" includes="*"/>
+            <sequential>
+                <local name="app-css-dir"/>
+                <local name="build-css-dir"/>
+                <local name="sass.name"/>
+                <local name="use.shell"/>
+
+                <property name="app-css-dir" location="${app.dir}/resources/css"/>
+                <property name="build-css-dir" location="${build.dir}/resources/css"/>
+
+                <!--
+                convert abspath to just the leaf path name
+                -->
+                <basename property="sass.name" file="@{sass}"/>
+
+                <!--
+                compile to both the workspace (for theme build)
+                and build directory (for deployment)
+                -->
+                <condition property="use.shell" value="true">
+                    <os family="unix"/>
+                </condition>
+
+                <x-shell dir="@{sass}">
+                    compass compile --boring --force
+                </x-shell>
+
+                <x-compress-css srcfile="${build-css-dir}/${sass.name}/*.css"
+                                outdir="${build-css-dir}/${sass.name}"/>
+            </sequential>
+        </for>
+
+        <!-- copy framework / app resource files to build.dir -->
+        <copy todir="${build.dir}">
+            <fileset dir="${app.dir}"
+                     includes="resources/**/*,
+                               ext/resources/themes/images/**/*"
+                     excludes="resources/sass/**/*,
+                               resources/theme/**/*"/>
+        </copy>
+    </target>
+    <target name="-after-sass"/>
+    <target name="sass" depends="init" unless="skip.sass"
+            description="Builds only the SASS files using Compass">
+        <antcall target="-before-sass"/>
+        <antcall target="-sass"/>
+        <antcall target="-after-sass"/>
+    </target>
+
+    <!--
+    Build Themes
+    -->
+    <target name="-before-theme"/>
+    <target name="-theme">
+        <!-- slice the themes for the various images -->
+        <for param="theme">
+            <dirset dir="${app.dir}/resources/theme" includes="*"/>
+            <sequential>
+                <local name="theme.name"/>
+                <basename property="theme.name" file="@{theme}"/>
+
+                <x-sencha-command>
+                    theme
+                    build
+                    -page=@{theme}/theme.html
+                    -out=${build.dir}/resources/images/${theme.name}
+                </x-sencha-command>
+            </sequential>
+        </for>
+    </target>
+    <target name="-after-theme"/>
+    <target name="theme" depends="init" unless="skip.theme"
+            description="Builds only the application's Theme(s)">
+        <antcall target="-before-theme"/>
+        <antcall target="-theme"/>
+        <antcall target="-after-theme"/>
+    </target>
+
+    <!--
+    Build Page
+    -->
+    <target name="-before-page"/>
+    <target name="-page">
+        <x-sencha-command>
+            app
+            build
+        </x-sencha-command>
+    </target>
+    <target name="-after-page"/>
+    <target name="page" depends="init" unless="skip.page"
+            description="Builds only the application's HTML page">
+        <antcall target="-before-page"/>
+        <antcall target="-page"/>
+        <antcall target="-after-page"/>
+    </target>
+
+    <!--
+    Build
+    -->
+    <target name="-before-build"/>
+    <target name="-build" depends="sass,theme,page"/>
+    <target name="-after-build"/>
+    <target name="build"
+            depends="init,-before-build,-build,-after-build"
+            description="Builds the application"/>
+
+    <!--
+    environment setters
+    -->
+
+    <target name="production">
+        <property name="args.environment" value="production"/>
+    </target>
+
+    <target name="testing">
+        <property name="args.environment" value="testing"/>
+    </target>
+
+    <target name="native">
+        <property name="args.environment" value="native"/>
+    </target>
+
+    <target name="package">
+        <property name="args.environment" value="package"/>
+    </target>
+    
+    <!--
+    Helpful targets
+    -->
+    <target name=".props" depends="init"
+            description="Lists all properties defined for the build">
+        <echoproperties/>
+    </target>
+
+    <target name=".help" depends="init"
+            description="Provides help on the build script">
+        <local name="-alltargets"/>
+        <x-shell outputproperty="-alltargets">
+            ant -f ${ant.file} -p
+        </x-shell>
+
+        <!--
+        Remove the annoying "Default taret:.help" smashed on the end of the output.
+        -->
+        <script language="javascript">
+            var s = project.getProperty("-alltargets"),
+                n = s.indexOf('Default target:');
+            //self.log("all=" + n);
+            project.setProperty("-alltargets", s.substring(0, n));
+        </script>
+
+        <echo><![CDATA[${-alltargets}
+This is the main build script for your application.
+
+The following properties can be used to disable certain steps in the build
+process.
+
+ * skip.page        Do not build the HTML page.
+ * skip.sass        Do not build the SASS.
+ * skip.theme       Do not build the theme images.
+
+These options can be stored in a local.properties file in this folder or in the
+local.properties file in the workspace.
+
+Alternatively, these can be supplied on the command line. For example:
+
+    ant -Dskip.sass=1 build
+
+To see all currently defined properties, do this:
+
+    ant .props
+        ]]></echo>
+    </target>
+
+</project>

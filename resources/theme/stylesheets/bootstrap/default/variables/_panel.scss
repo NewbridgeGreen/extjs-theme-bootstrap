@@ -1,0 +1,71 @@
+// TODO: Change value to $include-default-uis !default;
+$include-panel-uis: true;
+
+// ===============================
+// ========= BASE PANEL ==========
+// ===============================
+$panel-border-radius: null !default;
+$panel-border-width: 1px !default;
+$panel-base-color: $bodyBackground !default; //#DFE8F6
+$panel-border-color: $tableBorder !default;
+
+// ===============================
+// ========= PANEL BODY ==========
+// ===============================
+$panel-body-border-width: 1px !default;
+$panel-body-border-style: solid !default;
+$panel-body-background-color: $bodyBackground !default;
+$panel-body-color: $color !default;
+$panel-body-border-color: $panel-border-color !default;
+$panel-body-font-size: $baseFontSize !default;
+
+// ===============================
+// ======== PANEL TOOLS ==========
+// ===============================
+$tool-size: 15px !default;
+
+// ===============================
+// ======== PANEL HEADER =========
+// ===============================
+$panel-header-border-width: 1px !default;
+$panel-header-border-style: none !default;
+$panel-header-inner-border: false !default;
+$panel-header-inner-border-width: 1px 0 0 !default;
+
+//padding
+$panel-header-padding: 3px 0 4px !default;
+$panel-header-vertical-padding: 5px 4px !default;
+
+//fonts
+$panel-header-font-size: $baseFontSize + 4 !default; //11px
+$panel-header-line-height: $baseLineHeight !default;
+$panel-header-font-weight: bold !default;
+$panel-header-font-family: $sansFontFamily !default;
+
+//icon
+$panel-header-icon-width: 16px !default;
+$panel-header-icon-height: 16px !default;
+
+//background
+$panel-header-background-gradient: null !default;
+
+// UI defaults
+$panel-header-border-color: $panel-border-color !default;
+$panel-header-inner-border-color: $tableBorder !default;
+$panel-header-color: $color !default;
+$panel-header-background-color: $bodyBackground !default;
+
+// ===============================
+// ======== FRAMED PANEL =========
+// ===============================
+$frame-base-color: $panel-base-color !default;
+
+//border
+$panel-frame-border-radius: 4px !default;
+$panel-frame-border-width: 1px !default;
+$panel-frame-border-style: solid !default;
+$panel-frame-padding: 4px !default;
+
+// UI defaults
+$panel-frame-background-color: $bodyBackground !default;
+$panel-frame-border-color: $panel-border-color !default;

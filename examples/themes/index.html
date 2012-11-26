@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ext JS 4 Themes</title>
+        <link rel="stylesheet" type="text/css" href="../../resources/css/bootstrap/bootstrap.css" />
+        <!--<link rel="stylesheet" type="text/css" href="../../ext/resources/css/ext-neptune.css" />-->
+
+        <!-- GC -->
+
+        <script type="text/javascript" src="../../ext/ext-all.js"></script>
+        <script type="text/javascript" src="themes.js"></script>
+        <style>
+
+            div#header {
+                padding: 25px 0 10px 0;
+                margin: 0 50px -5px 50px;
+            }
+            #main-container {
+				margin-left: 30px;
+            }
+            div#header h1 span {
+                color: inherit;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 13px;
+                font-weight: normal;
+                line-height: 30px;
+                padding-left: 25px;
+            }
+            body {
+                padding-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>Ext JS Themes<span>View and test every Ext component against bundled <a href="http://www.sencha.com/products/extjs/themes/">Ext Themes</a>, or, your own custom themes.</span></h1>
+            <form id="styleswitcher" class="well well-small">
+                <label for="styleswitcher_select">Choose Theme: </label>
+                <select name="styleswitcher_select" id="styleswitcher_select">
+                    <option value="index.html" selected="true">Classic Theme</option>
+                    <option value="index-gray.html">Gray Theme</option>
+                    <option value="index-access.html">Accessibility Theme</option>
+                </select>
+            </form>
+        </div>
+    </body>
+</html>
