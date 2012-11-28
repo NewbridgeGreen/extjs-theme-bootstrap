@@ -9,7 +9,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
-  margin:0 0 20px;
+  margin:0 0 5px;
 }
 
 p, ul, ol, table, pre, dl {
@@ -252,4 +252,84 @@ footer {
     font-size:12pt;
     color:#444;
   }
+}
+
+.highlight {
+    background-color: lightyellow;
+}
+
+.navbar .nav .active > a,
+.navbar .nav > li > a:hover
+{
+
+    background-color:#eee;
+    color:#888;
+    border-radius: 20px;
+    border-top-left-radius: 4px;
+
+}
+
+.block a {
+    display: block;
+    padding-bottom: 7px;
+}
+
+.navbar .nav .active > a, .navbar .nav .active > a:hover {
+    background-color:#eee;
+    color:#888
+}
+
+.navbar .nav > li {
+    padding-right:5px;
+}
+
+.navbar .nav > li > a {
+    color:#777;
+    text-shadow: none;
+    font-size: 17px;
+
+
+}
+
+.navbar {
+
+    margin-bottom: 0px;
+}
+
+.navbar-inner {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+pre {
+    padding: 0;
+    margin: 10px 0px 10px;
+    overflow: auto; /*--If the Code exceeds the width, a scrolling is available--*/
+    overflow-Y: hidden;  /*--Hides vertical scroll created by IE--*/
+}
+pre code {
+    margin: 5px;  /*--Left Margin--*/
+    padding: 0px;
+    display: block;
+    line-height: 18px;
+}
+.center { text-align:center}
+.left {text-align:left}
+.right {text-align:right}
+
+ul, ol {
+    margin: 0;
+}
+
+.img {
+    margin-top: 20px;
+}
+
+.modal.img {
+    width: 800px;
+    margin: -350px 0 0 -400px;
+}
+
+.brand {
+    margin-bottom: 10px;
 }
