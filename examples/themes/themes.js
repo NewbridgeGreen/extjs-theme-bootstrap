@@ -325,6 +325,68 @@ function getFormWidgets () {
 
         items: [
             {
+                xtype: 'container',
+                defaults: {
+                    xtype: 'button',
+                    margin: 4
+                },
+                items: [{
+                        text: 'Link',
+                        ui: 'link'
+                    },
+                    {
+                        text: 'Default'
+                    },
+                    {
+                        text: 'Primary',
+                        ui: 'primary'
+                    },
+                    {
+                        text: 'Inverse',
+                        ui: 'inverse'
+                    },
+                    {
+                        text: 'Success',
+                        ui: 'success'
+                    },
+                    {
+                        text: 'Warning',
+                        ui: 'warning',
+                        scale: 'large'
+                    },
+                    {
+                        text: 'Info',
+                        ui: 'info',
+                        scale: 'medium',
+                        disabled: true
+                    },
+                    {
+                        text: 'Danger',
+                        ui: 'danger'
+                    },
+                    {
+                        text   :'Toggle Enabled',
+                        handler: function() {
+                            this.up('form').items.each(function(item) {
+                                item.setDisabled(!item.disabled);
+                            });
+                        }
+                    },
+                    {
+                        text   : 'Reset Form',
+                        handler: function() {
+                            Ext.getCmp('form-widgets').getForm().reset();
+                        }
+                    },
+                    {
+                        text   : 'Validate',
+                        handler: function() {
+                            Ext.getCmp('form-widgets').getForm().isValid();
+                        }
+                    }
+                ]
+            },
+            {
                 xtype: 'label',
                 text : 'Plain Label'
             },
@@ -419,9 +481,9 @@ function getFormWidgets () {
                     { xtype: 'radio', boxLabel: 'Radio 2', name: 'radiongrp1' }
                 ]
             }
-        ],
+        ]
 
-        buttons: [
+        /*tbar: [
             {
                 text: 'Link',
                 ui: 'link'
@@ -476,7 +538,7 @@ function getFormWidgets () {
                     Ext.getCmp('form-widgets').getForm().isValid();
                 }
             }
-        ]
+        ] */
     };
 }
 
@@ -1032,19 +1094,6 @@ function doThemes (rtl) {
         
     addResizer(mainContainer.el);
     //addFormWindow();
-
-    /**
-     * Stylesheet Switcher
-     */
-    Ext.get('styleswitcher_select').on('change', function(e, select) {
-        var name = select[select.selectedIndex].value,
-            currentPath = window.location.pathname,
-            isCurrent = currentPath.match(name);
-        
-        if (!isCurrent) {
-            window.location = name;
-        }
-    });
 
     setTimeout(function() {
         // we may comment out the creation of this for testing
