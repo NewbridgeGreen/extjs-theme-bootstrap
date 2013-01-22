@@ -30,6 +30,10 @@ Look at the example apps shipped with this project on how to integrate the theme
 
 Please raise any [issues](https://www.github.com/NewbridgeGreen/extjs-theme-bootstrap/issues) if you have problems with integration
 
+##Examples
+
+Examples of the theme being applied can be found in the examples folder
+
 ##Licence
 
 This software has been released under [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)

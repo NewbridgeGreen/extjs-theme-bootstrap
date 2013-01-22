@@ -1,3 +1,0 @@
-<project basedir=".">
-    <import file="${framework.config.dir}/plugin.xml"/>
-</project>
