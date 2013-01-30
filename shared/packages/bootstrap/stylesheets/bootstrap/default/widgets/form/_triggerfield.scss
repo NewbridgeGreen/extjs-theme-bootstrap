@@ -1,0 +1,218 @@
+/**
+ * Creates the base structure of trigger field.
+ * @member Ext.form.field.Trigger
+ */
+@mixin extjs-form-triggerfield {
+    .#{$prefix}form-trigger-wrap {
+        vertical-align: top;
+    }
+
+    .#{$prefix}form-trigger {
+        background-color: $grayLighter;
+        @include background-gradient($btnBackgroundHighlight, 'bootstrap-button');
+        background-image: theme-background-image($theme-name, 'glyphicons/glyphicons-halflings.png');
+        background-position: -305px -112px;
+
+		width: $form-trigger-width;
+		height: $form-trigger-height;//  $form-trigger-border-bottom-width;
+
+		//border-bottom: $form-trigger-border-bottom;
+
+        border: 1px solid $form-field-border-color;
+        border-left: 0;
+
+        cursor: pointer;
+        cursor: hand;
+        overflow: hidden;
+    }
+
+    .#{$prefix}form-trigger-wrap {
+        .#{$prefix}form-text {
+            @include border-radius($form-field-border-radius 0 0 $form-field-border-radius);
+        }
+    }
+    .#{$prefix}form-trigger-last {
+        background-color: $grayLighter;
+        @include border-radius(0 3px 3px 0);
+    }
+
+    .#{$prefix}trigger-cell {
+        position: relative;
+        //width: $form-trigger-width;
+        right: 0;
+    }
+
+    .#{$prefix}border-box .#{$prefix}form-trigger {
+        height: $form-trigger-height;
+    }
+
+    .#{$prefix}field-default-toolbar {
+
+        .#{$prefix}trigger-cell {
+            width: $form-toolbar-trigger-width !important;
+        }
+
+        .#{$prefix}form-trigger {
+            width: $form-toolbar-trigger-width;
+            height: $form-toolbar-trigger-height - $form-trigger-border-bottom-width;
+        }
+    }
+
+    .#{$prefix}border-box .#{$prefix}field-default-toolbar .#{$prefix}form-trigger {
+        width: $form-toolbar-trigger-width;
+        height: $form-toolbar-trigger-height;
+    }
+
+
+    .#{$prefix}form-trigger-over {
+		//background-position: -$form-trigger-width 0;
+        @include opacity(0.7);
+    }
+
+    .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-trigger {
+
+        border-bottom-color: $form-trigger-border-bottom-color-focus;
+    }
+
+    .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-trigger-over {
+        //background-position: -($form-trigger-width * 4) 0;
+    }
+
+    .#{$prefix}form-trigger-click,
+    .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-trigger-click {
+        @include opacity(0.9);
+    }
+
+    .#{$prefix}form-trigger-icon {
+        height: $form-trigger-width - $form-trigger-border-bottom-width;
+
+        background-repeat: no-repeat;
+        background-position: $form-trigger-icon-background-position;
+    }
+
+    .#{$prefix}pickerfield-open {
+        .#{$prefix}form-field {
+            @include border-bottom-radius(0);
+        }
+    }
+
+    .#{$prefix}pickerfield-open-above {
+        .#{$prefix}form-field {
+            @include border-bottom-left-radius(3px);
+            @include border-top-radius(0);
+        }
+    }
+
+    .#{$prefix}form-arrow-trigger {
+        background-position: -305px -112px;
+    }
+
+    .#{$prefix}form-date-trigger {
+        background-position: -184px -113px
+    }
+
+    $spinner-btn-height: $form-trigger-height / 2;
+    .#{$prefix}form-trigger-wrap {
+        .#{$prefix}form-spinner-up {
+            background-position: -280px -121px;
+
+            width: $form-trigger-width !important;
+            height: $spinner-btn-height !important;
+
+            font-size: 0; /*for IE*/
+
+            border-bottom-color: lighten($form-field-border-color, 5%);
+            border-top-right-radius: $form-field-border-radius;
+        }
+
+        .#{$prefix}form-spinner-down {
+            background-position: -305px -120px;
+            width: $form-trigger-width !important;
+            height: $spinner-btn-height !important;
+            font-size: 0;
+            border-top-color: darken($white, 5%);
+            border-bottom-right-radius: $form-field-border-radius;
+        }
+
+    }
+    .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-spinner-down {
+        //background-position: -($form-trigger-width * 3) (-$spinner-btn-height);
+    }
+    .#{$prefix}form-trigger-wrap .#{$prefix}form-spinner-down-over {
+        @include opacity(0.7); //background-position: (-$form-trigger-width) (-$spinner-btn-height);
+    }
+    .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-spinner-down-over {
+        //@include opacity()ackground-position: -($form-trigger-width * 4) (-$spinner-btn-height);
+    }
+    .#{$prefix}form-trigger-wrap .#{$prefix}form-spinner-down-click {
+        @include opacity(0.9);
+        //background-position: -($form-trigger-width * 2) (-$spinner-btn-height);
+    }
+
+
+    .#{$prefix}field-default-toolbar {
+        $spinner-btn-height: $form-toolbar-trigger-height / 2;
+        .#{$prefix}form-trigger-wrap {
+            .#{$prefix}form-spinner-up {
+                //background-image: theme-background-image($theme-name, 'form/spinner-small.gif');
+                height: $spinner-btn-height !important;
+            }
+            .#{$prefix}form-spinner-down {
+                //background-image: theme-background-image($theme-name, 'form/spinner-small.gif');
+                height: $spinner-btn-height !important;
+                //background-position: 0 (-$spinner-btn-height);
+            }
+        }
+        .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-spinner-down {
+            //background-position: -($form-trigger-width * 3) (-$spinner-btn-height);
+        }
+        .#{$prefix}form-trigger-wrap .#{$prefix}form-spinner-down-over {
+            @include opacity(0.7);
+            //background-position: (-$form-trigger-width) (-$spinner-btn-height);
+        }
+        .#{$prefix}form-trigger-wrap-focus .#{$prefix}form-spinner-down-over {
+            //background-position: -($form-trigger-width * 4) (-$spinner-btn-height);
+        }
+        .#{$prefix}form-trigger-wrap .#{$prefix}form-spinner-down-click {
+            @include opacity(0.9);
+            //background-position: -($form-trigger-width * 2) (-$spinner-btn-height);
+        }
+    }
+
+
+    .#{$prefix}trigger-noedit {
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    .#{$prefix}item-disabled {
+        .#{$prefix}trigger-noedit, .#{$prefix}form-trigger {
+          cursor: auto;
+        }
+    }
+
+
+    .#{$prefix}form-clear-trigger {
+        // icon-remove
+        background-image: theme-background-image($theme-name, 'glyphicons/glyphicons-halflings.png');
+        background-position: -310px 2;
+    }
+    .#{$prefix}form-search-trigger {
+        // icon-search
+        background-image: theme-background-image($theme-name, 'glyphicons/glyphicons-halflings.png');
+        background-position: -46px  2;
+    }
+
+    @if $include-ie {
+        // in IE6 quirks, the table cell enclosing the trigger field's input element does not shrink to fit,
+        // so it is necessary to set the height of the table cell.
+        .#{$prefix}quirks .#{prefix}ie6 {
+            .#{$prefix}form-trigger-input-cell {
+                height: $form-field-height;
+            }
+            .#{$prefix}field-default-toolbar .#{$prefix}form-trigger-input-cell {
+                height: $form-toolbar-field-height;
+            }
+        }
+    }
+}

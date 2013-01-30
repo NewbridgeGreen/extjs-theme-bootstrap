@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>App1</title>
+    <link rel="stylesheet" href="../shared/resources/bootstrap/app.css">
+    <link rel="stylesheet" href="../shared/css/menu.css">
+
+    <style type="text/css">
+        /* style rows on mouseover */
+        .x-grid-row-over .x-grid-cell-inner {
+            font-weight: bold;
+        }
+        /* shared styles for the ActionColumn icons */
+        .x-action-col-cell img {
+            height: 16px;
+            width: 16px;
+            cursor: pointer;
+        }
+        /* custom icon for the "buy" ActionColumn icon */
+        .x-action-col-cell img.buy-col {
+            background-image: url(../shared/resources/bootstrap/images/icons/fam/accept.png);
+        }
+        /* custom icon for the "alert" ActionColumn icon */
+        .x-action-col-cell img.alert-col {
+            background-image: url(../shared/resources/bootstrap/images/icons/fam/error.png);
+        }
+
+        .x-ie6 .x-action-col-cell img.buy-col {
+            background-image: url(../shared/resources/bootstrap/images/icons/fam/accept.gif);
+        }
+        .x-ie6.x-action-col-cell img.alert-col {
+            background-image: url(../shared/resources/bootstrap/images/icons/fam/error.gif);
+        }
+
+        .x-ie6 .x-action-col-cell img {
+            position:relative;
+            top:-1px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        _EXTROOT = '..';    // for paths inside .js files
+    </script>
+    <!-- <x-compile> -->
+        <!-- <x-bootstrap> -->
+            <script src="../ext/ext-dev.js"></script>
+            <script src="bootstrap.js"></script>
+        <!-- </x-bootstrap> -->
+        <script src="app/app.js"></script>
+    <!-- </x-compile> -->
+</head>
+<body>
+    <div class="nav">
+        <div>
+            LOGO
+        </div>
+        <div>
+            <ul class="horizontalMenu">
+                <li class="current">
+                    <a href="../app1/index.html">App1</a>
+                </li>
+                <li>
+                    <a href="../app2/index.html">App2</a>
+                </li>
+                <li>
+                    <a href="../app3/index.html">App3</a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+        <hr />
+    </div>
+    <div id="main">
+    </div>
+</body>
+</html>

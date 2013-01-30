@@ -1,0 +1,433 @@
+//base colors for the primary button
+$button-primary-base-color: $btnPrimaryBackgroundHighlight !default; //F7F7F7
+$button-primary-base-color-over: $btnPrimaryBackgroundHighlight !default; //E4F3FF
+$button-primary-base-color-focus: $button-primary-base-color-over !default;
+$button-primary-base-color-pressed: $btnPrimaryBackgroundHighlight !default; //B6CBE4
+$button-primary-base-color-disabled: $btnPrimaryBackgroundHighlight !default; //F7F7F7
+
+$button-primary-border-color: #c5c5c5 !default;
+$button-primary-border-color-over: #c5c5c5 !default;
+$button-primary-border-color-focus: #c5c5c5 !default;
+$button-primary-border-color-pressed: #c5c5c5 !default;
+$button-primary-border-color-disabled: #c5c5c5 !default;
+
+$button-primary-background-color: $button-primary-base-color !default;
+$button-primary-background-color-over: $button-primary-base-color-over !default;
+$button-primary-background-color-focus: $button-primary-base-color-focus !default;
+$button-primary-background-color-pressed: $button-primary-base-color-pressed !default;
+$button-primary-background-color-disabled: $button-primary-base-color-disabled !default;
+
+$button-primary-background-gradient: 'button-primary' !default;
+$button-primary-background-gradient-over: $button-primary-background-gradient !default;
+$button-primary-background-gradient-focus: $button-primary-background-gradient !default;
+$button-primary-background-gradient-pressed: null !default;
+$button-primary-background-gradient-disabled: $button-primary-background-gradient !default;
+
+$button-primary-color: $white !default;
+$button-primary-color-over: $button-primary-color !default;
+$button-primary-color-focus: $button-primary-color-over !default;
+$button-primary-color-pressed: $button-primary-color !default;
+$button-primary-color-disabled: lighten($button-primary-color, 35) !default;
+
+$button-primary-shadow: 0 -1px 0 rgba(0,0,0,.25) !default;
+$button-primary-shadow-over: $button-primary-shadow !default;
+$button-primary-shadow-focus: $button-primary-shadow !default;
+$button-primary-shadow-pressed: $button-primary-shadow !default;
+$button-primary-shadow-disabled: $button-primary-shadow !default;
+
+// primary-toolbar buttons
+$button-primary-toolbar-arrow-size: 12px !default;
+$button-primary-toolbar-split-size: 12px !default;
+
+$button-primary-toolbar-base-color: adjust-color($base-color, $hue: -213.333deg, $saturation: -55.556%, $lightness: 3.333%) !default;
+
+$button-primary-toolbar-border-color: transparent !default;
+$button-primary-toolbar-border-color-over: adjust-color($base-color, $hue: 0.084deg, $saturation: -9.891%, $lightness: -18.039%) !default;
+$button-primary-toolbar-border-color-focus: $button-primary-toolbar-border-color-over !default;
+$button-primary-toolbar-border-color-pressed: adjust-color($base-color, $hue: 0.721deg, $saturation: -17.014%, $lightness: -21.765%) !default;
+$button-primary-toolbar-border-color-disabled: transparent !default;
+
+$button-primary-toolbar-background-color: $button-primary-base-color !default;
+$button-primary-toolbar-background-color-over: $button-primary-base-color-over !default;
+$button-primary-toolbar-background-color-focus: $button-primary-base-color-focus !default;
+$button-primary-toolbar-background-color-pressed: $button-primary-base-color-pressed !default;
+$button-primary-toolbar-background-color-disabled: $button-primary-base-color-disabled !default;
+
+$button-primary-toolbar-background-gradient: null !default;
+$button-primary-toolbar-background-gradient-over: 'bootstrap-button-over' !default;
+$button-primary-toolbar-background-gradient-focus: $button-primary-toolbar-background-gradient-over !default;
+$button-primary-toolbar-background-gradient-pressed: null !default;
+$button-primary-toolbar-background-gradient-disabled: null !default;
+
+$button-primary-toolbar-color: #333 !default;
+$button-primary-toolbar-color-over: $button-primary-toolbar-color !default;
+$button-primary-toolbar-color-focus: $button-primary-toolbar-color-over !default;
+$button-primary-toolbar-color-pressed: $button-primary-toolbar-color !default;
+$button-primary-toolbar-color-disabled: lighten($button-primary-toolbar-color, 35) !default;
+
+$button-primary-toolbar-shadow: 0 -1px 0 rgba(0,0,0,.25) !default;
+$button-primary-toolbar-shadow-over: $button-primary-toolbar-shadow !default;
+$button-primary-toolbar-shadow-focus: $button-primary-toolbar-shadow !default;
+$button-primary-toolbar-shadow-pressed: $button-primary-toolbar-shadow !default;
+$button-primary-toolbar-shadow-disabled: $button-primary-toolbar-shadow !default;
+
+@include extjs-button-ui(
+    /* UI + Scale */
+    'primary-small',
+
+    $button-small-border-radius,
+    $button-small-border-width,
+
+    $button-primary-border-color,
+    $button-primary-border-color-over,
+    $button-primary-border-color-focus,
+    $button-primary-border-color-pressed,
+    $button-primary-border-color-disabled,
+
+    $button-small-padding,
+    $button-small-text-padding,
+
+    $button-primary-background-color,
+    $button-primary-background-color-over,
+    $button-primary-background-color-focus,
+    $button-primary-background-color-pressed,
+    $button-primary-background-color-disabled,
+
+    $button-primary-background-gradient,
+    $button-primary-background-gradient-over,
+    $button-primary-background-gradient-focus,
+    $button-primary-background-gradient-pressed,
+    $button-primary-background-gradient-disabled,
+
+    $button-primary-color,
+    $button-primary-color-over,
+    $button-primary-color-focus,
+    $button-primary-color-pressed,
+    $button-primary-color-disabled,
+
+    $button-primary-shadow,
+    $button-primary-shadow-over,
+    $button-primary-shadow-focus,
+    $button-primary-shadow-pressed,
+    $button-primary-shadow-disabled,
+    
+    $button-small-font-size,
+    $button-small-font-size-over,
+    $button-small-font-size-focus,
+    $button-small-font-size-pressed,
+    $button-small-font-size-disabled,
+
+    $button-small-font-weight,
+    $button-small-font-weight-over,
+    $button-small-font-weight-focus,
+    $button-small-font-weight-pressed,
+    $button-small-font-weight-disabled,
+
+    $button-small-font-family,
+    $button-small-font-family-over,
+    $button-small-font-family-focus,
+    $button-small-font-family-pressed,
+    $button-small-font-family-disabled,
+
+    $button-small-icon-size
+);
+
+@include extjs-button-ui(
+    'primary-medium',
+
+    $button-medium-border-radius,
+    $button-medium-border-width,
+
+    $button-primary-border-color,
+    $button-primary-border-color-over,
+    $button-primary-border-color-focus,
+    $button-primary-border-color-pressed,
+    $button-primary-border-color-disabled,
+
+    $button-medium-padding,
+    $button-medium-text-padding,
+
+    $button-primary-background-color,
+    $button-primary-background-color-over,
+    $button-primary-background-color-focus,
+    $button-primary-background-color-pressed,
+    $button-primary-background-color-disabled,
+
+    $button-primary-background-gradient,
+    $button-primary-background-gradient-over,
+    $button-primary-background-gradient-focus,
+    $button-primary-background-gradient-pressed,
+    $button-primary-background-gradient-disabled,
+
+    $button-primary-color,
+    $button-primary-color-over,
+    $button-primary-color-focus,
+    $button-primary-color-pressed,
+    $button-primary-color-disabled,
+
+    $button-primary-shadow,
+    $button-primary-shadow-over,
+    $button-primary-shadow-focus,
+    $button-primary-shadow-pressed,
+    $button-primary-shadow-disabled,
+
+    $button-medium-font-size,
+    $button-medium-font-size-over,
+    $button-medium-font-size-focus,
+    $button-medium-font-size-pressed,
+    $button-medium-font-size-disabled,
+
+    $button-medium-font-weight,
+    $button-medium-font-weight-over,
+    $button-medium-font-weight-focus,
+    $button-medium-font-weight-pressed,
+    $button-medium-font-weight-disabled,
+
+    $button-medium-font-family,
+    $button-medium-font-family-over,
+    $button-medium-font-family-focus,
+    $button-medium-font-family-pressed,
+    $button-medium-font-family-disabled,
+
+    $button-medium-icon-size
+);
+
+@include extjs-button-ui(
+    'primary-large',
+
+    $button-large-border-radius,
+    $button-large-border-width,
+
+    $button-primary-border-color,
+    $button-primary-border-color-over,
+    $button-primary-border-color-focus,
+    $button-primary-border-color-pressed,
+    $button-primary-border-color-disabled,
+
+    $button-large-padding,
+    $button-large-text-padding,
+
+    $button-primary-background-color,
+    $button-primary-background-color-over,
+    $button-primary-background-color-focus,
+    $button-primary-background-color-pressed,
+    $button-primary-background-color-disabled,
+
+    $button-primary-background-gradient,
+    $button-primary-background-gradient-over,
+    $button-primary-background-gradient-focus,
+    $button-primary-background-gradient-pressed,
+    $button-primary-background-gradient-disabled,
+
+    $button-primary-color,
+    $button-primary-color-over,
+    $button-primary-color-focus,
+    $button-primary-color-pressed,
+    $button-primary-color-disabled,
+
+    $button-primary-shadow,
+    $button-primary-shadow-over,
+    $button-primary-shadow-focus,
+    $button-primary-shadow-pressed,
+    $button-primary-shadow-disabled,
+
+    $button-large-font-size,
+    $button-large-font-size-over,
+    $button-large-font-size-focus,
+    $button-large-font-size-pressed,
+    $button-large-font-size-disabled,
+
+    $button-large-font-weight,
+    $button-large-font-weight-over,
+    $button-large-font-weight-focus,
+    $button-large-font-weight-pressed,
+    $button-large-font-weight-disabled,
+
+    $button-large-font-family,
+    $button-large-font-family-over,
+    $button-large-font-family-focus,
+    $button-large-font-family-pressed,
+    $button-large-font-family-disabled,
+
+    $button-large-icon-size
+);
+
+@include extjs-button-ui(
+    'primary-toolbar-small',
+
+    $button-small-border-radius,
+    $button-small-border-width,
+
+    $button-primary-toolbar-border-color,
+    $button-primary-toolbar-border-color-over,
+    $button-primary-toolbar-border-color-focus,
+    $button-primary-toolbar-border-color-pressed,
+    $button-primary-toolbar-border-color-disabled,
+
+    $button-small-padding,
+    $button-small-text-padding,
+
+    $button-primary-toolbar-background-color,
+    $button-primary-toolbar-background-color-over,
+    $button-primary-toolbar-background-color-focus,
+    $button-primary-toolbar-background-color-pressed,
+    $button-primary-toolbar-background-color-disabled,
+
+    $button-primary-toolbar-background-gradient,
+    $button-primary-toolbar-background-gradient-over,
+    $button-primary-toolbar-background-gradient-focus,
+    $button-primary-toolbar-background-gradient-pressed,
+    $button-primary-toolbar-background-gradient-disabled,
+
+    $button-primary-toolbar-color,
+    $button-primary-toolbar-color-over,
+    $button-primary-toolbar-color-focus,
+    $button-primary-toolbar-color-pressed,
+    $button-primary-toolbar-color-disabled,
+
+    $button-primary-toolbar-shadow,
+    $button-primary-toolbar-shadow-over,
+    $button-primary-toolbar-shadow-focus,
+    $button-primary-toolbar-shadow-pressed,
+    $button-primary-toolbar-shadow-disabled,
+
+    $button-small-font-size,
+    $button-small-font-size-over,
+    $button-small-font-size-focus,
+    $button-small-font-size-pressed,
+    $button-small-font-size-disabled,
+
+    $button-small-font-weight,
+    $button-small-font-weight-over,
+    $button-small-font-weight-focus,
+    $button-small-font-weight-pressed,
+    $button-small-font-weight-disabled,
+
+    $button-small-font-family,
+    $button-small-font-family-over,
+    $button-small-font-family-focus,
+    $button-small-font-family-pressed,
+    $button-small-font-family-disabled,
+
+    $button-small-icon-size
+);
+
+@include extjs-button-ui(
+    'primary-toolbar-medium',
+
+    $button-medium-border-radius,
+    $button-medium-border-width,
+
+    $button-primary-toolbar-border-color,
+    $button-primary-toolbar-border-color-over,
+    $button-primary-toolbar-border-color-focus,
+    $button-primary-toolbar-border-color-pressed,
+    $button-primary-toolbar-border-color-disabled,
+
+    $button-medium-padding,
+    $button-medium-text-padding,
+
+    $button-primary-toolbar-background-color,
+    $button-primary-toolbar-background-color-over,
+    $button-primary-toolbar-background-color-focus,
+    $button-primary-toolbar-background-color-pressed,
+    $button-primary-toolbar-background-color-disabled,
+
+    $button-primary-toolbar-background-gradient,
+    $button-primary-toolbar-background-gradient-over,
+    $button-primary-toolbar-background-gradient-focus,
+    $button-primary-toolbar-background-gradient-pressed,
+    $button-primary-toolbar-background-gradient-disabled,
+
+    $button-primary-toolbar-color,
+    $button-primary-toolbar-color-over,
+    $button-primary-toolbar-color-focus,
+    $button-primary-toolbar-color-pressed,
+    $button-primary-toolbar-color-disabled,
+
+    $button-primary-toolbar-shadow,
+    $button-primary-toolbar-shadow-over,
+    $button-primary-toolbar-shadow-focus,
+    $button-primary-toolbar-shadow-pressed,
+    $button-primary-toolbar-shadow-disabled,
+
+    $button-medium-font-size,
+    $button-medium-font-size-over,
+    $button-medium-font-size-focus,
+    $button-medium-font-size-pressed,
+    $button-medium-font-size-disabled,
+
+    $button-medium-font-weight,
+    $button-medium-font-weight-over,
+    $button-medium-font-weight-focus,
+    $button-medium-font-weight-pressed,
+    $button-medium-font-weight-disabled,
+
+    $button-medium-font-family,
+    $button-medium-font-family-over,
+    $button-medium-font-family-focus,
+    $button-medium-font-family-pressed,
+    $button-medium-font-family-disabled,
+
+    $button-medium-icon-size
+);
+
+@include extjs-button-ui(
+    'primary-toolbar-large',
+
+    $button-large-border-radius,
+    $button-large-border-width,
+
+    $button-primary-toolbar-border-color,
+    $button-primary-toolbar-border-color-over,
+    $button-primary-toolbar-border-color-focus,
+    $button-primary-toolbar-border-color-pressed,
+    $button-primary-toolbar-border-color-disabled,
+
+    $button-large-padding,
+    $button-large-text-padding,
+
+    $button-primary-toolbar-background-color,
+    $button-primary-toolbar-background-color-over,
+    $button-primary-toolbar-background-color-focus,
+    $button-primary-toolbar-background-color-pressed,
+    $button-primary-toolbar-background-color-disabled,
+
+    $button-primary-toolbar-background-gradient,
+    $button-primary-toolbar-background-gradient-over,
+    $button-primary-toolbar-background-gradient-focus,
+    $button-primary-toolbar-background-gradient-pressed,
+    $button-primary-toolbar-background-gradient-disabled,
+
+    $button-primary-toolbar-color,
+    $button-primary-toolbar-color-over,
+    $button-primary-toolbar-color-focus,
+    $button-primary-toolbar-color-pressed,
+    $button-primary-toolbar-color-disabled,
+
+    $button-primary-toolbar-shadow,
+    $button-primary-toolbar-shadow-over,
+    $button-primary-toolbar-shadow-focus,
+    $button-primary-toolbar-shadow-pressed,
+    $button-primary-toolbar-shadow-disabled,
+
+    $button-large-font-size,
+    $button-large-font-size-over,
+    $button-large-font-size-focus,
+    $button-large-font-size-pressed,
+    $button-large-font-size-disabled,
+
+    $button-large-font-weight,
+    $button-large-font-weight-over,
+    $button-large-font-weight-focus,
+    $button-large-font-weight-pressed,
+    $button-large-font-weight-disabled,
+
+    $button-large-font-family,
+    $button-large-font-family-over,
+    $button-large-font-family-focus,
+    $button-large-font-family-pressed,
+    $button-large-font-family-disabled,
+
+    $button-large-icon-size
+);
