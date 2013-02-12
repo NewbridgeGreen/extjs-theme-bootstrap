@@ -1,77 +1,63 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Shared</title>
-    <link rel="stylesheet" href="resources/bootstrap/app.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Ext JS 4 Themes</title>
+        <!--<link rel="stylesheet" type="text/css" href="../../resources/css/ext-all.css" />-->
+        <link rel="stylesheet" href="resources/bootstrap/app.css">
+        <style>
+            .add16 {
+                overflow: hidden;
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-image: url('resources/bootstrap/images/glyphicons/glyphicons-halflings.png');
+                margin: 0;
+                background-position: 0 -96px;
+            }
+            .cut16 {
+                overflow: hidden;
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                background-image: url('resources/bootstrap/images/glyphicons/glyphicons-halflings.png');
+                margin: 0;
+                background-position: -312px 0;
+            }
+            div#header {
+                height: 65px;
+                padding: 25px 0 10px 0;
+                width: 1090px;
+                margin: 0 50px -5px 50px;
+            }
+            div#header h1 {
+                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 24px;
+                font-weight: 600;
+            }
+            body {
+                padding-bottom:10px;
+            }
+        </style>
 
-    <style type="text/css">
-        /* style rows on mouseover */
-        .x-grid-row-over .x-grid-cell-inner {
-            font-weight: bold;
-        }
-        /* shared styles for the ActionColumn icons */
-        .x-action-col-cell img {
-            height: 16px;
-            width: 16px;
-            cursor: pointer;
-        }
-        /* custom icon for the "buy" ActionColumn icon */
-        .x-action-col-cell img.buy-col {
-            background-image: url(resources/bootstrap/images/icons/fam/accept.png);
-        }
-        /* custom icon for the "alert" ActionColumn icon */
-        .x-action-col-cell img.alert-col {
-            background-image: url(resources/bootstrap/images/icons/fam/error.png);
-        }
-
-        .x-ie6 .x-action-col-cell img.buy-col {
-            background-image: url(resources/bootstrap/images/icons/fam/accept.gif);
-        }
-        .x-ie6.x-action-col-cell img.alert-col {
-            background-image: url(resources/bootstrap/images/icons/fam/error.gif);
-        }
-
-        .x-ie6 .x-action-col-cell img {
-            position:relative;
-            top:-1px;
-        }
-    </style>
-
-    <script type="text/javascript">
-        _EXTROOT = '..';    // for paths inside .js files
-    </script>
-    <!-- <x-compile> -->
-        <!-- <x-bootstrap> -->
-            <script src="../ext/ext-dev.js"></script>
-            <script src="bootstrap.js"></script>
-        <!-- </x-bootstrap> -->
-        <script src="app/app.js"></script>
-    <!-- </x-compile> -->
-</head>
-<body>
-    <div class="nav">
-        <div>
-            LOGO
+        <script type="text/javascript">
+            _EXTROOT = '..';    // for paths inside .js files
+        </script>
+        <!-- <x-compile> -->
+            <!-- <x-bootstrap> -->
+                <script src="../ext/ext-dev.js"></script>
+                <script src="bootstrap.js"></script>
+            <!-- </x-bootstrap> -->
+            <script type="text/javascript" src="themes.js"></script>
+        <!-- </x-compile> -->
+    </head>
+    <body>
+        <div id="header">
+            <h1>Ext JS Themes</h1>
         </div>
-        <div>
-            <ul class="horizontalMenu">
-                <li class="current">
-                    <a href="../app1/index.html">App1</a>
-                </li>
-                <li>
-                    <a href="../app2/index.html">App2</a>
-                </li>
-                <li>
-                    <a href="../app3/index.html">App3</a>
-                </li>
-            </ul>
-        </div>
-        <div class="clearfix"></div>
-        <hr />
-    </div>
-    <div id="main">
-    </div>
-</body>
+    </body>
 </html>
