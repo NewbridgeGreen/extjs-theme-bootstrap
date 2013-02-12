@@ -1,0 +1,72 @@
+/*----------------------------------------------------------
+ |	CSS Cookbook, 3rd Ed, sect 2.22 page 93
+ +----------------------------------------------------------*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* CSS rule for IE6 */
+* html .clearfix {
+	height: 1%;
+}
+/* CSS rule for IE7 */
+*:first-child+html .clearfix {
+	min-height: 1px;
+}
+
+/*----------------------------------------------------------
+ |	HorizontalMenu (no sub menus)
+ +----------------------------------------------------------*/
+
+.horizontalMenu {
+    height: 25px;
+    display:block;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    -moz-box-sizing: content-box;-ms-box-sizing: content-box;-webkit-box-sizing: content-box;box-sizing: content-box; /* ensure menu works on ext-js pages */
+}
+
+ul.horizontalMenu,
+ul.horizontalMenu li {   /* shared properties applied to all ul and li's in the horizontalMenu */
+	float: left;
+	list-style-type: none;
+	margin: 0;
+	/*padding: 0;*/
+    -moz-box-sizing: content-box;-ms-box-sizing: content-box;-webkit-box-sizing: content-box;box-sizing: content-box; /* ensure menu works on ext-js pages */
+}
+
+ul.horizontalMenu {
+	height: 25px;
+	/*background-color: #000;*/
+}
+
+/* 
+ * Top level menu config
+ */
+ul.horizontalMenu li {
+	padding: 0 5px;
+	position: relative;
+}
+ul.horizontalMenu li a {
+	float: left;
+	padding: 0 5px;
+	color: #6c6c6c;
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+}
+ul.horizontalMenu li a:hover,            /* top level menu on hover */
+ul.horizontalMenu > li.selected > a {    /* top level menu selected on page load - use child-selectors to ensure other sub-menu items on selected top-level menu aren't affected */
+	color: black;
+	border-bottom: 2px solid #ff9c08;
+}
+ul.horizontalMenu > li.selected > a {    /* top level menu selected on page load - use child-selectors to ensure other sub-menu items on selected top-level menu aren't affected */
+	font-weight: bold;      /* NB don't set bold on hover - changes text width */
+}    
+ul.horizontalMenu li.current > a { /* top level menu (which has submenu) on hover - NB class current added via jQuery on hover */
+	color: black;
+	/*font-weight: bold;   don't set bold on hover - changes text width */
+	border-bottom: 2px solid #ff9c08;
+}

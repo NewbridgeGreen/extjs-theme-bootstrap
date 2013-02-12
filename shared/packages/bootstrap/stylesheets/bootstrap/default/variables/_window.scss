@@ -1,0 +1,20 @@
+$window-base-color: $base-color !default;
+
+$window-border-radius: 6px !default;
+$window-border-width: 1px !default;
+$window-border-color: $tableBorder !default;
+$window-inner-border-width: 1px !default;
+$window-inner-border-color: $tableBorder !default;
+$window-background-color: $bodyBackground !default;
+
+$window-body-border-width: 1px !default;
+$window-body-border-style: solid !default;
+$window-body-border-color: $tableBorder !default;
+$window-body-background-color: $bodyBackground !default;
+$window-body-color: $color !default;
+
+$window-header-padding: 5px 5px 0 !default;
+$window-header-font-size: $baseFontSize + 4 !default; //11px
+$window-header-line-height: $baseLineHeight !default;
+$window-header-color: $color !default;
+$window-header-font-weight: bold !default;

@@ -1,0 +1,433 @@
+//base colors for the success button
+$button-success-base-color: $btnSuccessBackgroundHighlight !default; //F7F7F7
+$button-success-base-color-over: $btnSuccessBackgroundHighlight !default; //E4F3FF
+$button-success-base-color-focus: $button-success-base-color-over !default;
+$button-success-base-color-pressed: $btnSuccessBackgroundHighlight !default; //B6CBE4
+$button-success-base-color-disabled: $btnSuccessBackgroundHighlight !default; //F7F7F7
+
+$button-success-border-color: #c5c5c5 !default;
+$button-success-border-color-over: #c5c5c5 !default;
+$button-success-border-color-focus: #c5c5c5 !default;
+$button-success-border-color-pressed: #c5c5c5 !default;
+$button-success-border-color-disabled: #c5c5c5 !default;
+
+$button-success-background-color: $button-success-base-color !default;
+$button-success-background-color-over: $button-success-base-color-over !default;
+$button-success-background-color-focus: $button-success-base-color-focus !default;
+$button-success-background-color-pressed: $button-success-base-color-pressed !default;
+$button-success-background-color-disabled: $button-success-base-color-disabled !default;
+
+$button-success-background-gradient: 'button-success' !default;
+$button-success-background-gradient-over: $button-success-background-gradient !default;
+$button-success-background-gradient-focus: $button-success-background-gradient !default;
+$button-success-background-gradient-pressed: null !default;
+$button-success-background-gradient-disabled: $button-success-background-gradient !default;
+
+$button-success-color: $white !default;
+$button-success-color-over: $button-success-color !default;
+$button-success-color-focus: $button-success-color-over !default;
+$button-success-color-pressed: $button-success-color !default;
+$button-success-color-disabled: lighten($button-success-color, 35) !default;
+
+$button-success-shadow: 0 -1px 0 rgba(0,0,0,.25) !default;
+$button-success-shadow-over: $button-success-shadow !default;
+$button-success-shadow-focus: $button-success-shadow !default;
+$button-success-shadow-pressed: $button-success-shadow !default;
+$button-success-shadow-disabled: $button-success-shadow !default;
+
+// success-toolbar buttons
+$button-success-toolbar-arrow-size: 12px !default;
+$button-success-toolbar-split-size: 12px !default;
+
+$button-success-toolbar-base-color: adjust-color($base-color, $hue: -213.333deg, $saturation: -55.556%, $lightness: 3.333%) !default;
+
+$button-success-toolbar-border-color: transparent !default;
+$button-success-toolbar-border-color-over: adjust-color($base-color, $hue: 0.084deg, $saturation: -9.891%, $lightness: -18.039%) !default;
+$button-success-toolbar-border-color-focus: $button-success-toolbar-border-color-over !default;
+$button-success-toolbar-border-color-pressed: adjust-color($base-color, $hue: 0.721deg, $saturation: -17.014%, $lightness: -21.765%) !default;
+$button-success-toolbar-border-color-disabled: transparent !default;
+
+$button-success-toolbar-background-color: $button-success-base-color !default;
+$button-success-toolbar-background-color-over: $button-success-base-color-over !default;
+$button-success-toolbar-background-color-focus: $button-success-base-color-focus !default;
+$button-success-toolbar-background-color-pressed: $button-success-base-color-pressed !default;
+$button-success-toolbar-background-color-disabled: $button-success-base-color-disabled !default;
+
+$button-success-toolbar-background-gradient: null !default;
+$button-success-toolbar-background-gradient-over: 'bootstrap-button-over' !default;
+$button-success-toolbar-background-gradient-focus: $button-success-toolbar-background-gradient-over !default;
+$button-success-toolbar-background-gradient-pressed: null !default;
+$button-success-toolbar-background-gradient-disabled: null !default;
+
+$button-success-toolbar-color: #333 !default;
+$button-success-toolbar-color-over: $button-success-toolbar-color !default;
+$button-success-toolbar-color-focus: $button-success-toolbar-color-over !default;
+$button-success-toolbar-color-pressed: $button-success-toolbar-color !default;
+$button-success-toolbar-color-disabled: lighten($button-success-toolbar-color, 35) !default;
+
+$button-success-toolbar-shadow: 0 -1px 0 rgba(0,0,0,.25) !default;
+$button-success-toolbar-shadow-over: $button-success-toolbar-shadow !default;
+$button-success-toolbar-shadow-focus: $button-success-toolbar-shadow !default;
+$button-success-toolbar-shadow-pressed: $button-success-toolbar-shadow !default;
+$button-success-toolbar-shadow-disabled: $button-success-toolbar-shadow !default;
+
+@include extjs-button-ui(
+/* UI + Scale */
+        'success-small',
+
+        $button-small-border-radius,
+        $button-small-border-width,
+
+        $button-success-border-color,
+        $button-success-border-color-over,
+        $button-success-border-color-focus,
+        $button-success-border-color-pressed,
+        $button-success-border-color-disabled,
+
+        $button-small-padding,
+        $button-small-text-padding,
+
+        $button-success-background-color,
+        $button-success-background-color-over,
+        $button-success-background-color-focus,
+        $button-success-background-color-pressed,
+        $button-success-background-color-disabled,
+
+        $button-success-background-gradient,
+        $button-success-background-gradient-over,
+        $button-success-background-gradient-focus,
+        $button-success-background-gradient-pressed,
+        $button-success-background-gradient-disabled,
+
+        $button-success-color,
+        $button-success-color-over,
+        $button-success-color-focus,
+        $button-success-color-pressed,
+        $button-success-color-disabled,
+
+        $button-success-shadow,
+        $button-success-shadow-over,
+        $button-success-shadow-focus,
+        $button-success-shadow-pressed,
+        $button-success-shadow-disabled,
+
+        $button-small-font-size,
+        $button-small-font-size-over,
+        $button-small-font-size-focus,
+        $button-small-font-size-pressed,
+        $button-small-font-size-disabled,
+
+        $button-small-font-weight,
+        $button-small-font-weight-over,
+        $button-small-font-weight-focus,
+        $button-small-font-weight-pressed,
+        $button-small-font-weight-disabled,
+
+        $button-small-font-family,
+        $button-small-font-family-over,
+        $button-small-font-family-focus,
+        $button-small-font-family-pressed,
+        $button-small-font-family-disabled,
+
+        $button-small-icon-size
+);
+
+@include extjs-button-ui(
+        'success-medium',
+
+        $button-medium-border-radius,
+        $button-medium-border-width,
+
+        $button-success-border-color,
+        $button-success-border-color-over,
+        $button-success-border-color-focus,
+        $button-success-border-color-pressed,
+        $button-success-border-color-disabled,
+
+        $button-medium-padding,
+        $button-medium-text-padding,
+
+        $button-success-background-color,
+        $button-success-background-color-over,
+        $button-success-background-color-focus,
+        $button-success-background-color-pressed,
+        $button-success-background-color-disabled,
+
+        $button-success-background-gradient,
+        $button-success-background-gradient-over,
+        $button-success-background-gradient-focus,
+        $button-success-background-gradient-pressed,
+        $button-success-background-gradient-disabled,
+
+        $button-success-color,
+        $button-success-color-over,
+        $button-success-color-focus,
+        $button-success-color-pressed,
+        $button-success-color-disabled,
+
+        $button-success-shadow,
+        $button-success-shadow-over,
+        $button-success-shadow-focus,
+        $button-success-shadow-pressed,
+        $button-success-shadow-disabled,
+
+        $button-medium-font-size,
+        $button-medium-font-size-over,
+        $button-medium-font-size-focus,
+        $button-medium-font-size-pressed,
+        $button-medium-font-size-disabled,
+
+        $button-medium-font-weight,
+        $button-medium-font-weight-over,
+        $button-medium-font-weight-focus,
+        $button-medium-font-weight-pressed,
+        $button-medium-font-weight-disabled,
+
+        $button-medium-font-family,
+        $button-medium-font-family-over,
+        $button-medium-font-family-focus,
+        $button-medium-font-family-pressed,
+        $button-medium-font-family-disabled,
+
+        $button-medium-icon-size
+);
+
+@include extjs-button-ui(
+        'success-large',
+
+        $button-large-border-radius,
+        $button-large-border-width,
+
+        $button-success-border-color,
+        $button-success-border-color-over,
+        $button-success-border-color-focus,
+        $button-success-border-color-pressed,
+        $button-success-border-color-disabled,
+
+        $button-large-padding,
+        $button-large-text-padding,
+
+        $button-success-background-color,
+        $button-success-background-color-over,
+        $button-success-background-color-focus,
+        $button-success-background-color-pressed,
+        $button-success-background-color-disabled,
+
+        $button-success-background-gradient,
+        $button-success-background-gradient-over,
+        $button-success-background-gradient-focus,
+        $button-success-background-gradient-pressed,
+        $button-success-background-gradient-disabled,
+
+        $button-success-color,
+        $button-success-color-over,
+        $button-success-color-focus,
+        $button-success-color-pressed,
+        $button-success-color-disabled,
+
+        $button-success-shadow,
+        $button-success-shadow-over,
+        $button-success-shadow-focus,
+        $button-success-shadow-pressed,
+        $button-success-shadow-disabled,
+
+        $button-large-font-size,
+        $button-large-font-size-over,
+        $button-large-font-size-focus,
+        $button-large-font-size-pressed,
+        $button-large-font-size-disabled,
+
+        $button-large-font-weight,
+        $button-large-font-weight-over,
+        $button-large-font-weight-focus,
+        $button-large-font-weight-pressed,
+        $button-large-font-weight-disabled,
+
+        $button-large-font-family,
+        $button-large-font-family-over,
+        $button-large-font-family-focus,
+        $button-large-font-family-pressed,
+        $button-large-font-family-disabled,
+
+        $button-large-icon-size
+);
+
+@include extjs-button-ui(
+        'success-toolbar-small',
+
+        $button-small-border-radius,
+        $button-small-border-width,
+
+        $button-success-toolbar-border-color,
+        $button-success-toolbar-border-color-over,
+        $button-success-toolbar-border-color-focus,
+        $button-success-toolbar-border-color-pressed,
+        $button-success-toolbar-border-color-disabled,
+
+        $button-small-padding,
+        $button-small-text-padding,
+
+        $button-success-toolbar-background-color,
+        $button-success-toolbar-background-color-over,
+        $button-success-toolbar-background-color-focus,
+        $button-success-toolbar-background-color-pressed,
+        $button-success-toolbar-background-color-disabled,
+
+        $button-success-toolbar-background-gradient,
+        $button-success-toolbar-background-gradient-over,
+        $button-success-toolbar-background-gradient-focus,
+        $button-success-toolbar-background-gradient-pressed,
+        $button-success-toolbar-background-gradient-disabled,
+
+        $button-success-toolbar-color,
+        $button-success-toolbar-color-over,
+        $button-success-toolbar-color-focus,
+        $button-success-toolbar-color-pressed,
+        $button-success-toolbar-color-disabled,
+
+        $button-success-toolbar-shadow,
+        $button-success-toolbar-shadow-over,
+        $button-success-toolbar-shadow-focus,
+        $button-success-toolbar-shadow-pressed,
+        $button-success-toolbar-shadow-disabled,
+
+        $button-small-font-size,
+        $button-small-font-size-over,
+        $button-small-font-size-focus,
+        $button-small-font-size-pressed,
+        $button-small-font-size-disabled,
+
+        $button-small-font-weight,
+        $button-small-font-weight-over,
+        $button-small-font-weight-focus,
+        $button-small-font-weight-pressed,
+        $button-small-font-weight-disabled,
+
+        $button-small-font-family,
+        $button-small-font-family-over,
+        $button-small-font-family-focus,
+        $button-small-font-family-pressed,
+        $button-small-font-family-disabled,
+
+        $button-small-icon-size
+);
+
+@include extjs-button-ui(
+        'success-toolbar-medium',
+
+        $button-medium-border-radius,
+        $button-medium-border-width,
+
+        $button-success-toolbar-border-color,
+        $button-success-toolbar-border-color-over,
+        $button-success-toolbar-border-color-focus,
+        $button-success-toolbar-border-color-pressed,
+        $button-success-toolbar-border-color-disabled,
+
+        $button-medium-padding,
+        $button-medium-text-padding,
+
+        $button-success-toolbar-background-color,
+        $button-success-toolbar-background-color-over,
+        $button-success-toolbar-background-color-focus,
+        $button-success-toolbar-background-color-pressed,
+        $button-success-toolbar-background-color-disabled,
+
+        $button-success-toolbar-background-gradient,
+        $button-success-toolbar-background-gradient-over,
+        $button-success-toolbar-background-gradient-focus,
+        $button-success-toolbar-background-gradient-pressed,
+        $button-success-toolbar-background-gradient-disabled,
+
+        $button-success-toolbar-color,
+        $button-success-toolbar-color-over,
+        $button-success-toolbar-color-focus,
+        $button-success-toolbar-color-pressed,
+        $button-success-toolbar-color-disabled,
+
+        $button-success-toolbar-shadow,
+        $button-success-toolbar-shadow-over,
+        $button-success-toolbar-shadow-focus,
+        $button-success-toolbar-shadow-pressed,
+        $button-success-toolbar-shadow-disabled,
+
+        $button-medium-font-size,
+        $button-medium-font-size-over,
+        $button-medium-font-size-focus,
+        $button-medium-font-size-pressed,
+        $button-medium-font-size-disabled,
+
+        $button-medium-font-weight,
+        $button-medium-font-weight-over,
+        $button-medium-font-weight-focus,
+        $button-medium-font-weight-pressed,
+        $button-medium-font-weight-disabled,
+
+        $button-medium-font-family,
+        $button-medium-font-family-over,
+        $button-medium-font-family-focus,
+        $button-medium-font-family-pressed,
+        $button-medium-font-family-disabled,
+
+        $button-medium-icon-size
+);
+
+@include extjs-button-ui(
+        'success-toolbar-large',
+
+        $button-large-border-radius,
+        $button-large-border-width,
+
+        $button-success-toolbar-border-color,
+        $button-success-toolbar-border-color-over,
+        $button-success-toolbar-border-color-focus,
+        $button-success-toolbar-border-color-pressed,
+        $button-success-toolbar-border-color-disabled,
+
+        $button-large-padding,
+        $button-large-text-padding,
+
+        $button-success-toolbar-background-color,
+        $button-success-toolbar-background-color-over,
+        $button-success-toolbar-background-color-focus,
+        $button-success-toolbar-background-color-pressed,
+        $button-success-toolbar-background-color-disabled,
+
+        $button-success-toolbar-background-gradient,
+        $button-success-toolbar-background-gradient-over,
+        $button-success-toolbar-background-gradient-focus,
+        $button-success-toolbar-background-gradient-pressed,
+        $button-success-toolbar-background-gradient-disabled,
+
+        $button-success-toolbar-color,
+        $button-success-toolbar-color-over,
+        $button-success-toolbar-color-focus,
+        $button-success-toolbar-color-pressed,
+        $button-success-toolbar-color-disabled,
+
+        $button-success-toolbar-shadow,
+        $button-success-toolbar-shadow-over,
+        $button-success-toolbar-shadow-focus,
+        $button-success-toolbar-shadow-pressed,
+        $button-success-toolbar-shadow-disabled,
+
+        $button-large-font-size,
+        $button-large-font-size-over,
+        $button-large-font-size-focus,
+        $button-large-font-size-pressed,
+        $button-large-font-size-disabled,
+
+        $button-large-font-weight,
+        $button-large-font-weight-over,
+        $button-large-font-weight-focus,
+        $button-large-font-weight-pressed,
+        $button-large-font-weight-disabled,
+
+        $button-large-font-family,
+        $button-large-font-family-over,
+        $button-large-font-family-focus,
+        $button-large-font-family-pressed,
+        $button-large-font-family-disabled,
+
+        $button-large-icon-size
+);

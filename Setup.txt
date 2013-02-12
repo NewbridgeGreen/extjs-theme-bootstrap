@@ -1,0 +1,32 @@
+cd \
+sencha -sdk ext-4.1.1a generate workspace dev\test
+
+rem Create the shared app to hold the global theme and shared css/js/images
+sencha -sdk ext-4.1.1a generate app Shared dev\test\shared
+cd dev\test\shared
+sencha generate theme bootstrap
+rem TODO: fix up shared/package/bootstrap & shared\.sencha\app\sencha.cfg & shared/css & shared/js
+
+rem Build the shared app
+cd shared
+sencha app build
+
+rem Create a new app which uses the shared resources
+cd \
+sencha -sdk ext-4.1.1a generate app App1 dev\test\app1
+rem TODO: remove packages&resources + fix up app1\.sencha\app\sencha.cfg & app1\index.html
+rem TODO: create app - app1\index.html & app1\app\*
+cd app1
+sencha app build
+rem TODO: check build\App1\index.html loads
+
+rem ------------------------------------------------------
+rem Other useful stuff
+rem ------------------------------------------------------
+
+rem Debugging sliced image generation
+sencha theme build -page stuff/theme/theme.html -out images/theme -image image.png -data data.json
+	rem now check image.png & data.json outputs
+
+rem Build theme (sass -> .css & slices & copy to build\)
+sencha theme build newtheme

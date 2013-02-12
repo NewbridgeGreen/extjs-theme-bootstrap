@@ -1,2 +1,4 @@
 ext
-.sencha
+build
+.sass-cache
+shared/resources/bootstrap/images
